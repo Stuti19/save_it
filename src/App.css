@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+.settings-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  /* text-align: center; */
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.settings-section {
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.settings-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"] {
+  width: calc(100% - 40px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: rgb(228, 228, 228);
+}
+
+.search-bar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar i {
+  color: #888;
+  position: absolute;
+  left: 10px;
+  font-size: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-bar input[type="text"] {
+  padding-left: 30px;
+  width: calc(100% - 70px);
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  color: #666;
+  font-size: 1em;
+}
+
+/* Smaller Toggle Button Style */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 35px; /* Further reduced width */
+  height: 20px; /* Further reduced height */
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px; /* Adjusted to match new height */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; /* Further reduced height */
+  width: 14px; /* Further reduced width */
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider:before {
+  transform: translateX(12px); /* Adjusted for new width */
+}
+
+/* Separator */
+.separator {
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
 }
